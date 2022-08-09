@@ -1,4 +1,4 @@
-package io.ballerine.kmp.ballerine_android_sdk
+package io.ballerine.android_sdk_example
 
 import android.os.Bundle
 import android.widget.Toast

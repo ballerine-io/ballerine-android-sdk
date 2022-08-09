@@ -18,7 +18,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import java.io.File
-import io.ballerine.kmp.ballerine_android_sdk.R
 import java.util.concurrent.ExecutorService
 
 /**

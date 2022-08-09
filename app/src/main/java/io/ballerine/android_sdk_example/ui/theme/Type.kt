@@ -1,4 +1,4 @@
-package io.ballerine.kmp.ballerine_android_sdk.ui.theme
+package io.ballerine.android_sdk_example.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
