@@ -4,11 +4,11 @@ buildscript {
     }
     repositories {
         google()
+        mavenCentral()
         maven {
             url "https://jitpack.io"
             credentials { username authToken }
         }
-        mavenCentral()
     }
 
     dependencies {
