@@ -28,7 +28,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
-import io.ballerine.kmp.ballerine_android_sdk.R
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
