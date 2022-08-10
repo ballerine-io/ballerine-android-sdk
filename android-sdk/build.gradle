@@ -21,20 +21,6 @@ android {
             release {
                 debuggable false
                 minifyEnabled false
-
-                libraryVariants.all { variant ->
-                    variant.outputs.all {
-                        def aarName = "ballerine-android-sdk-${project.version}.aar"
-
-                        println "\n============================================================"
-                        println "project module : Ballerine Android SDK"
-                        println "project version : $project.version"
-                        println "build type : ${variant.buildType.name}"
-                        println "output name : $aarName"
-                        println "============================================================\n"
-                        outputFileName = aarName
-                    }
-                }
             }
         }
     }
@@ -50,14 +36,6 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-    }
-
-    packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
     }
 }
 
@@ -101,8 +79,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                groupId = 'com.github.ballerine-io'
-                artifactId = 'android-sdk'
+                groupId = 'com.github.ballerine_io'
+                artifactId = 'android_sdk'
                 version = '1.0.3'
             }
         }
