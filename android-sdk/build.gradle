@@ -75,13 +75,12 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-
             release(MavenPublication) {
                 from components.release
 
-                groupId = 'com.github.ballerine_io'
-                artifactId = 'android_sdk'
-                version = '1.0.3'
+                groupId = 'com.github.gau4sar'
+                artifactId = 'ballerine-android-sdk'
+                version = '1.0.0'
             }
         }
     }
