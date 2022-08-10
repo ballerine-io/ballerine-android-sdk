@@ -1,4 +1,4 @@
-package io.ballerine.ballerine_android_sdk
+package io.ballerine.android_sdk
 
 import androidx.annotation.Keep
 
