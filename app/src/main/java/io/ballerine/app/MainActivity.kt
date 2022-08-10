@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import io.ballerine.ballerine_android_sdk.BallerineKYCFlowWebView
+import io.ballerine.android_sdk.BallerineKYCFlowWebView
 import java.io.File
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors

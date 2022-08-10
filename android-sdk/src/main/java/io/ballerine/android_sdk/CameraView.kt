@@ -1,7 +1,6 @@
-package io.ballerine.ballerine_android_sdk
+package io.ballerine.android_sdk
 
 import android.content.Context
-import android.graphics.drawable.Icon
 import android.net.Uri
 import android.util.Log
 import androidx.camera.core.CameraSelector
