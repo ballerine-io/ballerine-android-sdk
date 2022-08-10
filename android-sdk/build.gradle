@@ -4,11 +4,6 @@ plugins {
     id 'maven-publish'
 }
 
-task androidSourcesJar(type: Jar) {
-    classifier 'sources'
-    from android.sourceSets.main.java.srcDirs
-}
-
 android {
     compileSdk 32
 
@@ -23,7 +18,24 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            release {
+                debuggable false
+                minifyEnabled false
+
+                libraryVariants.all { variant ->
+                    variant.outputs.all {
+                        def aarName = "ballerine-android-sdk-${project.version}.aar"
+
+                        println "\n============================================================"
+                        println "project module : Ballerine Android SDK"
+                        println "project version : $project.version"
+                        println "build type : ${variant.buildType.name}"
+                        println "output name : $aarName"
+                        println "============================================================\n"
+                        outputFileName = aarName
+                    }
+                }
+            }
         }
     }
     compileOptions {
@@ -38,6 +50,14 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
     }
 }
 
@@ -77,12 +97,12 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
+
             release(MavenPublication) {
                 from components.release
-                artifact androidSourcesJar
 
                 groupId = 'com.github.ballerine-io'
-                artifactId = 'ballerine-android-sdk'
+                artifactId = 'android-sdk'
                 version = '1.0.0'
             }
         }

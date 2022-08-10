@@ -10,5 +10,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ballerine-android-sdk"
-include ':ballerine-android-sdk'
+include ':android-sdk'
 include ':app'
