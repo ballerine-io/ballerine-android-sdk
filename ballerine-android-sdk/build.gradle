@@ -79,6 +79,7 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
+                artifact androidSourcesJar
 
                 groupId = 'com.github.ballerine-io'
                 artifactId = 'ballerine-android-sdk'
