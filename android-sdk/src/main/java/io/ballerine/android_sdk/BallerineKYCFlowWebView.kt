@@ -80,19 +80,6 @@ fun BallerineKYCFlowWebView(
         }
     }
 
-    if (showMediaPicker) {
-        CameraView(
-            isOpenFrontCamera = isOpenFrontCamera,
-            outputDirectory = outputFileDirectory,
-            executor = cameraExecutorService,
-            onImageCaptured = { uri ->
-                filePathCallback?.onReceiveValue(arrayOf(uri))
-                filePathCallback = null
-                showMediaPicker = false
-            }
-        ) { Log.e("CameraView", "View error:", it) }
-    }
-
     val webViewChromeClient = object : WebChromeClient() {
 
         override fun onShowFileChooser(
@@ -176,6 +163,19 @@ fun BallerineKYCFlowWebView(
                 loadUrl(url)
             }
         })
+
+    if (showMediaPicker) {
+        CameraView(
+            isOpenFrontCamera = isOpenFrontCamera,
+            outputDirectory = outputFileDirectory,
+            executor = cameraExecutorService,
+            onImageCaptured = { uri ->
+                filePathCallback?.onReceiveValue(arrayOf(uri))
+                filePathCallback = null
+                showMediaPicker = false
+            }
+        ) { Log.e("CameraView", "View error:", it) }
+    }
 }
 
 // Function to generate a Toast
