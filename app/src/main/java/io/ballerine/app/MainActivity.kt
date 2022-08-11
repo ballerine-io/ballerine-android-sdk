@@ -10,8 +10,8 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 class MainActivity : ComponentActivity() {
-    companion object {
 
+    companion object {
         const val BALLERINE_WEB_URL = "https://moneco.dev.ballerine.app"
 
         /**
@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
             BallerineKYCFlowWebView(
                 outputFileDirectory = outputFileDirectory,
                 cameraExecutorService = cameraExecutorService,
-                url = "$BALLERINE_WEB_URL?b_t=$BALLERINE_API_TOKEN",
+                url = "$BALLERINE_WEB_URL/?b_t=$BALLERINE_API_TOKEN",
                 onVerificationComplete = { verificationResult ->
 
                     //TODO :: Use the verification result returned
@@ -55,5 +55,10 @@ class MainActivity : ComponentActivity() {
             File(it, "Document").apply { mkdirs() }
         }
         return if (mediaDir != null && mediaDir.exists()) mediaDir else filesDir
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        cameraExecutorService.shutdown()
     }
 }
