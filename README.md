@@ -6,7 +6,7 @@
 2. Add gradle dependency for Ballerine webview in your app-level `build.gradle` file
 ```kt
 dependencies {
-   implementation("com.github.gau4sar:Ballerine-android-webview:master-SNAPSHOT")
+   implementation("com.github.gau4sar:Ballerine-android-webview:1.0.5")
 }
 ```
    We need to add the maven dependency for jitpack in settings.gradle
