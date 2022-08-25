@@ -1,6 +1,7 @@
 package io.ballerine.android_sdk
 
 import androidx.annotation.Keep
+import java.io.Serializable
 
 @Keep
 data class VerificationResult(
