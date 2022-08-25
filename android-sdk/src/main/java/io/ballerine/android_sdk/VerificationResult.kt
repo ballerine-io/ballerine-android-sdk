@@ -8,4 +8,4 @@ data class VerificationResult(
     val status: String?,
     val idvResult: String?,
     val code: String?,
-)
+) : Serializable
