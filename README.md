@@ -41,4 +41,3 @@ BallerineKYCFlowWebView(
 ```
 4. Once you have received the `VerificationResult` we can do further checks on the different values of the `VerificationResult` like `status`|`idvResult`|`code`|`isSync`.
    (As shown above in Point 3)
-
